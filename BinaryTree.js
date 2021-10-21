@@ -122,6 +122,36 @@ class BST {
         return count;
     }
 
+    deleteNode(value, node = this.root) {
+        if (node == null) {
+            return node;
+        }
+        if (node.value > value){
+            node.left = this.deleteNode(value, node.left);
+            console.log(node.left.value)
+        } else if (node.value < value) {
+            node.right = this.deleteNode(value, node.right);
+        } else {
+            if (node.left == null && node.right == null){
+                node == null;
+            } else if (node.left && node.right) {
+                let pred = this.findMax(node.left);
+                let temp = pred;
+                node.left = this.deleteNode(pred.value, node.left);
+            } else {
+                let child
+                if (node.left) {
+                    child = node.left
+                    
+                } else {
+                    child = node.right
+                }
+                node = child;
+            }
+        }
+        return node;
+    }
+
 }
 
 var list = new BST();
@@ -143,9 +173,11 @@ list.addNode(10);
 // console.log(list.contains(5));
 
 // console.log(list.size());
-console.log(list.depth());
-console.log(list.isBalance());
+// console.log(list.depth());
+// console.log(list.isBalance());
 
+console.log(list.remove(9));
+console.log(list.depth());
 
 
 
