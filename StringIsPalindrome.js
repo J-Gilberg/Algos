@@ -23,22 +23,22 @@
 // also note: this can end early
 // "ab (100 billion characters) ca"
 
-function isPalindrome(input) {
-    for( var i = 0; i < input.length/2; ++i){
-        if(input[i]!=input[(input.length-(1+i))]){
-            return false;
-        }
-    }
-    return true;
-}
+// function isPalindrome(input) {
+//     for( var i = 0; i < input.length/2; ++i){
+//         if(input[i]!=input[(input.length-(1+i))]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
-console.log(isPalindrome("racecar"));
-console.log(isPalindrome("raceecar"));
-console.log(isPalindrome("raceeecar"));
-console.log(isPalindrome(""));
-console.log(isPalindrome("a"));
-console.log(isPalindrome("aa"));
-console.log(isPalindrome("ab"));
+// console.log(isPalindrome("racecar"));
+// console.log(isPalindrome("raceecar"));
+// console.log(isPalindrome("raceeecar"));
+// console.log(isPalindrome(""));
+// console.log(isPalindrome("a"));
+// console.log(isPalindrome("aa"));
+// console.log(isPalindrome("ab"));
 
 // longestPalindrome(input)
 // input is a string
